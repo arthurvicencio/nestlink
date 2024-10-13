@@ -1,9 +1,14 @@
 package main
 
 import (
-	"fmt"
+	"log"
+	"net/http"
+
+	"github.com/arthurvicencio/nestlink/pkg/api"
 )
 
 func main() {
-	fmt.Println("Hello, World!")
+	api.Register()
+
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
